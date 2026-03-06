@@ -92,10 +92,12 @@ button:hover{
 <div class="result" id="result"></div>
 
 <script>
+const backendUrl = 'https://your-railway-app-url.railway.app'; // Replace with your Railway backend URL
+
 async function predict() {
     const formData = new FormData(document.getElementById("predictForm"));
     try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
+        const response = await fetch(`${backendUrl}/predict`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
